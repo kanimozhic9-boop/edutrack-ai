@@ -201,4 +201,6 @@ elif selected_tab == "🚨 Intervention Center":
     res_col1, res_col2 = st.columns(2)
     with res_col1:
         st.markdown("#### Simulated Predictive Classification Outcome Profile")
-        if simulated_risk > 65:
+                if simulated_risk > 65:
+            pass
+
