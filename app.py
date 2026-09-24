@@ -194,13 +194,17 @@ elif selected_tab == "🚨 Intervention Center":
     with sim_col3:
         s_quiz = st.slider("Simulated Evaluation Scores Matrix:", 0, 100, 50)
         
-    # Recalculating conditional algorithmic metrics
+       # Recalculating conditional algorithmic metrics
     simulated_risk = (100 - (0.35 * s_lms + 0.30 * s_att + 0.25 * s_quiz + 0.10 * 40)).clip(0, 100)
     
     st.markdown("---")
     res_col1, res_col2 = st.columns(2)
     with res_col1:
         st.markdown("#### Simulated Predictive Classification Outcome Profile")
-                if simulated_risk > 65:
-            pass
+        if simulated_risk > 65:
+            st.error(f"Predicted Output Index Status: HIGH RISK BOUNDARY ({round(simulated_risk, 1)} / 100 Score Matrix)")
+        elif simulated_risk > 35:
+            st.warning(f"Predicted Output Index Status: MODERATE RISK TIERS ({round(simulated_risk, 1)} / 100 Score Matrix)")
+        else:
+            st.success(f"Predicted Output Index Status: SECURE SYSTEMIC STATE ({round(simulated_risk, 1)} / 100 Score Matrix)")
 
