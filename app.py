@@ -120,7 +120,7 @@ elif selected_tab == "📈 Student Analytics":
     st.markdown("<h2 style='color: #1E3A8A;'>Granular Student Profile Auditing</h2>", unsafe_allow_html=True)
     
     # Filters row
-    filter_col1, filter_col2 = st.columns([1, 3])
+    filter_col1, filter_col2 = st.columns(2)
     with filter_col1:
         risk_filter = st.multiselect("Filter Risk Tier:", ["High Risk", "Medium Risk", "Low Risk"], default=["High Risk", "Medium Risk"])
     with filter_col2:
@@ -158,7 +158,7 @@ elif selected_tab == "🧠 Drift & Explainability":
     st.markdown("<h2 style='color: #1E3A8A;'>Explainable AI (XAI) Feature Importance Matrix</h2>", unsafe_allow_html=True)
     st.markdown("Global attribution indicators mapping parameters generating systemic academic drift risks.")
     
-    col_xai1, col_xai2 = st.columns([3, 2])
+    col_xai1, col_xai2 = st.columns(2)
     with col_xai1:
         st.subheader("Global SHAP Attributions (Risk Engine Vector Weighting)")
         features = ["LMS Interaction Gaps", "Class Absence Patterns", "Quiz Performance Deficits", "Forum Static Behaviors"]
